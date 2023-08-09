@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="kayh.dev" description="My website">
-  <main class="mx-auto max-w-3xl bg-neutral-800 py-4 space-y-4">
+  <main class="h-screen mx-auto max-w-3xl bg-neutral-800 py-4 space-y-4">
     <h1 class="text-center font-bold text-5xl">Kayh</h1>
 
     <div
@@ -17,79 +17,94 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-3 gap-8 px-8">
-      <secion>
-        <h2>Links</h2>
-        <hr class="border-neutral-500 pb-2" />
-        <ul>
-          <li>
-            <a
-              href="https://github.com/kayhhh"
-              target="_blank"
-              class="hover:underline">GitHub</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/kayh_online"
-              target="_blank"
-              class="hover:underline">Twitter</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://discord.gg/cazUfCCgHJ"
-              target="_blank"
-              class="hover:underline">Discord</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://myanimelist.net/profile/kayh_online"
-              target="_blank"
-              class="hover:underline">MyAnimeList</a
-            >
-          </li>
-        </ul>
-      </secion>
+    <div class="flex space-x-8 px-8">
+      <div class="w-full">
+        <section>
+          <h2>Projects</h2>
+          <hr class="border-neutral-500 pb-2" />
+          <ul>
+            <li>
+              <a
+                href="https://unavi.xyz"
+                target="_blank"
+                class="hover:underline">UNAVI</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/unavi-xyz/lattice"
+                target="_blank"
+                class="hover:underline">Lattice Engine</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/unavi-xyz/wired-protocol"
+                target="_blank"
+                class="hover:underline">The Wired</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
 
-      <secion>
-        <h2>Projects</h2>
-        <hr class="border-neutral-500 pb-2" />
-        <ul>
-          <li>
-            <a href="https://unavi.xyz" target="_blank" class="hover:underline"
-              >UNAVI</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/unavi-xyz/lattice"
-              target="_blank"
-              class="hover:underline">Lattice Engine</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/unavi-xyz/wired-protocol"
-              target="_blank"
-              class="hover:underline">The Wired</a
-            >
-          </li>
-        </ul>
-      </secion>
+      <div class="w-[180px] space-y-4">
+        <section>
+          <h2>Links</h2>
+          <hr class="border-neutral-500 pb-2" />
+          <ul>
+            <li>
+              <a
+                href="https://github.com/kayhhh"
+                target="_blank"
+                class="hover:underline">GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/kayh_online"
+                target="_blank"
+                class="hover:underline">Twitter</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://discord.gg/cazUfCCgHJ"
+                target="_blank"
+                class="hover:underline">Discord</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://myanimelist.net/profile/kayh_online"
+                target="_blank"
+                class="hover:underline">MyAnimeList</a
+              >
+            </li>
+          </ul>
+        </section>
 
-      <secion>
-        <h2>Groups</h2>
-        <hr class="border-neutral-500 pb-2" />
-        <ul>
-          <li>
-            <a href="https://m3org.com/" target="_blank" class="hover:underline"
-              >M3</a
-            >
-          </li>
-        </ul>
-      </secion>
+        <section>
+          <h2>Groups</h2>
+          <hr class="border-neutral-500 pb-2" />
+          <ul>
+            <li>
+              <a
+                href="https://m3org.com/"
+                target="_blank"
+                class="hover:underline">M3</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <iframe
+          width="180"
+          height="180"
+          style="border:none"
+          src="https://dimden.neocities.org/navlink/"
+          name="neolink"></iframe>
+      </div>
     </div>
   </main>
 </Layout>
