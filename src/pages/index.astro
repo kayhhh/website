@@ -3,21 +3,28 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="kayh.dev" description="My website">
-  <main class="h-screen mx-auto max-w-3xl bg-neutral-800 py-4 space-y-4">
-    <h1 class="text-center font-bold text-5xl">Kayh</h1>
+  <div
+    class="absolute w-full h-full -z-10 opacity-10 bg-repeat"
+    style="background-image: url('/icon-192.png')"
+  >
+  </div>
+
+  <div class="w-full h-screen sm:py-8">
+  <main class="mx-auto h-full bg-white/10 max-w-3xl border rounded py-4 space-y-4">
+    <h1 class="text-center font-medium text-5xl">Kayh</h1>
 
     <div
-      class="sm:w-1/2 bg-neutral-900 sm:rounded mx-auto overflow-hidden whitespace-nowrap"
+      class="sm:w-1/2 sm:rounded mx-auto overflow-hidden whitespace-nowrap"
     >
       <div class="animate-marquee">
         Virtual Architect | Web Developer | VR Enthusiast | ??? Engineer | 3D
-        Artist | Human | Cypherpunk | Disciple of The Sun ☼ | Creator | Part
-        time NEET | Cyberspace Native | Lover of People ♥ | Accelerationist |
-        Playing the Infinite Game
+        Artist | Human | Cypherpunk | Disciple of The Sun ☼ | Builder | Part
+        time NEET | I use NixOS btw | Cyberspace Native | Lover of People ♥ |
+        Accelerationist | Playing the Infinite Game
       </div>
     </div>
 
-    <div class="flex space-x-8 px-8">
+    <div class="flex flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-8 px-8">
       <div class="w-full">
         <section>
           <h2>Projects</h2>
@@ -48,7 +55,7 @@ import Layout from "../layouts/Layout.astro";
         </section>
       </div>
 
-      <div class="w-[180px] space-y-4">
+      <div class="sm:w-[180px] space-y-4">
         <section>
           <h2>Links</h2>
           <hr class="border-neutral-500 pb-2" />
@@ -101,10 +108,12 @@ import Layout from "../layouts/Layout.astro";
         <iframe
           width="180"
           height="180"
-          style="border:none"
           src="https://dimden.neocities.org/navlink/"
-          name="neolink"></iframe>
+          name="neolink"
+          class="border-0 mx-auto"
+          ></iframe>
       </div>
     </div>
   </main>
+    </div>
 </Layout>
