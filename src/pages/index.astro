@@ -17,13 +17,15 @@ import Layout from "../layouts/Layout.astro";
         <h1 class="text-center font-medium text-5xl">Kayh</h1>
 
         <div
-          class="sm:w-1/2 sm:rounded mx-auto overflow-hidden whitespace-nowrap"
+          class="sm:max-w-sm sm:rounded mx-auto overflow-hidden whitespace-nowrap"
         >
           <div class="animate-marquee">
             Virtual Architect | Web Developer | VR Enthusiast | ??? Engineer |
-            3D Artist | Human | Cypherpunk | Disciple of The Sun ☼ | Builder |
-            Part time NEET | Enlightened by Nix | Cyberspace Native | Magician |
-            Lover of People ♥ | Accelerationist | Playing the Infinite Game
+            3D Artist | Proudly Human | Cypherpunk | Disciple of The Sun ☼ |
+            Autonomous Agent | Memetic Alchemist | Transhumanist | Part-time
+            NEET | Enlightened by Nix | Cyberspace Native | Magician | Wielder
+            of the Power of Friendship | Open Source Advocate | Explorer | Lover
+            of People ♥ | Accelerationist | Playing the Infinite Game
           </div>
         </div>
 
@@ -99,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
               <img
                 id="rise"
                 src="/rise.gif"
-                class="fixed left-full cursor-pointer"
+                class="absolute left-full cursor-pointer"
               />
 
               <script>
@@ -116,13 +118,8 @@ import Layout from "../layouts/Layout.astro";
 
                 // Move rise to same position as plc, plus optional offset
                 const moveRise = (x = 0, y = 0) => {
-                  const img = document.getElementById("rise");
-                  const plc = document.getElementById("rise-plc");
-
-                  const plcRect = plc.getBoundingClientRect();
-
-                  img.style.left = `${plcRect.left + x}px`;
-                  img.style.top = `${plcRect.top + y}px`;
+                  img.style.left = `${plc.offsetLeft + x}px`;
+                  img.style.top = `${plc.offsetTop + y}px`;
                 };
 
                 // Initialize rise position after load, because
