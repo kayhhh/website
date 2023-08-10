@@ -12,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
 
     <div class="w-full h-full min-h-screen p-1 sm:p-0 sm:m-0 sm:py-8">
       <main
-        class="mx-auto h-full bg-white/10 max-w-3xl border rounded py-4 space-y-4"
+        class="relative mx-auto h-full bg-white/10 overflow-hidden max-w-3xl border rounded py-4 space-y-4"
       >
         <h1 class="text-center font-medium text-5xl">Kayh</h1>
 
@@ -72,12 +72,77 @@ import Layout from "../layouts/Layout.astro";
                 >
               </section>
 
-              <a
-                href="https://www.youtube.com/watch?v=ih1JkNZF5WA"
-                target="_blank"
-              >
-                <img src="/rise.gif" />
-              </a>
+              <div id="rise-plc" class="w-[190px] h-[380px]"></div>
+              <img
+                id="rise"
+                src="/rise.gif"
+                class="absolute left-1/2 right-1/2"
+              />
+
+              <script>
+                const rise_normal = "/rise.gif";
+                const rise_attack = "/rise_attack.gif";
+                const rise_clumsy = "/rise_clumsy.gif";
+                const rise_crouch = "/rise_crouch.gif";
+                const rise_owo = "/rise_owo.gif";
+
+                const img = document.getElementById("rise");
+
+                let timeout = null;
+
+                // Move rise to same position as plc, plus optional offset
+                function moveRise(x = 0, y = 0) {
+                  const plc = document.getElementById("rise-plc");
+                  img.style.left = `${plc.offsetLeft + x}px`;
+                  img.style.top = `${plc.offsetTop + y}px`;
+                }
+
+                moveRise();
+                window.addEventListener("resize", moveRise);
+
+                const animateGif = (path: string, x = 0, y = 0, len = 800) => {
+                  if (timeout) {
+                    clearTimeout(timeout);
+                  }
+
+                  moveRise(x, y);
+                  img.src = path;
+
+                  // Weird teleportation bug fix
+                  img.style.opacity = "0";
+
+                  timeout = setTimeout(() => {
+                    img.style.opacity = "1";
+
+                    timeout = setTimeout(() => {
+                      moveRise();
+                      img.src = rise_normal;
+
+                      // Weird teleportation bug fix
+                      img.style.opacity = "0";
+
+                      timeout = setTimeout(() => {
+                        img.style.opacity = "1";
+                      }, 50);
+                    }, len);
+                  }, 50);
+                };
+
+                const onClick = () => {
+                  const rand = Math.random();
+                  if (rand < 0.3) {
+                    animateGif(rise_attack, -200, -80, 900);
+                  } else if (rand < 0.8) {
+                    animateGif(rise_clumsy, -90, -7);
+                  } else if (rand < 0.95) {
+                    animateGif(rise_crouch, 0, 100);
+                  } else {
+                    animateGif(rise_owo, -40, -100, 2000);
+                  }
+                };
+
+                img.addEventListener("click", onClick);
+              </script>
             </div>
           </div>
 
