@@ -19,7 +19,7 @@ import Layout from "../layouts/Layout.astro";
         <div
           class="sm:max-w-sm sm:rounded mx-auto overflow-hidden whitespace-nowrap"
         >
-          <div class="animate-marquee">
+          <div id="marquee" class="animate-marquee">
             Virtual Architect | Web Developer | VR Enthusiast | ??? Engineer |
             3D Artist | Proudly Human | Cypherpunk | Disciple of The Sun ☼ |
             Autonomous Agent | Memetic Alchemist | Transhumanist | Part-time
@@ -27,6 +27,17 @@ import Layout from "../layouts/Layout.astro";
             of the Power of Friendship | Open Source Advocate | Explorer | Lover
             of People ♥ | Accelerationist | Playing the Infinite Game
           </div>
+
+          <script>
+            // Pause animation on hover
+            const marquee = document.getElementById("marquee");
+            marquee.addEventListener("mouseenter", () => {
+              marquee.style.animationPlayState = "paused";
+            });
+            marquee.addEventListener("mouseleave", () => {
+              marquee.style.animationPlayState = "running";
+            });
+          </script>
         </div>
 
         <div
@@ -40,7 +51,7 @@ import Layout from "../layouts/Layout.astro";
                 Hi, I'm Kayh! Welcome to my site! I like VR and making 3D things
                 and anime and music and coding (I use Neovim btw) and monster
                 energy and Persona and Undertale and Lain and Hunter X Hunter
-                and YOU ❤️. I spend a lot of time in VRChat, so if you see me
+                and YOU ♥. I spend a lot of time in VRChat, so if you see me
                 around come say hi!
                 <br />
                 <br />
