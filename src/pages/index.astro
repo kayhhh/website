@@ -54,7 +54,7 @@ import Layout from "../layouts/Layout.astro";
             </section>
 
             <div class="grid grid-cols-2">
-              <div class="space-y-4">
+              <div class="space-y-8">
                 <section>
                   <h2>Projects</h2>
                   <hr class="border-neutral-500 pb-2" />
@@ -88,11 +88,35 @@ import Layout from "../layouts/Layout.astro";
                   <hr class="border-neutral-500 pb-2" />
                   <a
                     href="https://wakatime.com/@cb710a2e-6926-4408-ada5-d04bdfa541f7"
+                    class="pt-1"
                     ><img
                       src="https://wakatime.com/badge/user/cb710a2e-6926-4408-ada5-d04bdfa541f7.svg"
                       alt="Total time coded since Apr 17 2022"
                     /></a
                   >
+                </section>
+
+                <section>
+                  <h2>Button</h2>
+                  <hr class="border-neutral-500 pb-2" />
+
+                  <div
+                    class="border p-2 space-y-1.5 flex flex-col items-center rounded"
+                  >
+                    <a href="https://kayh.dev" target="_blank"
+                      ><img src="/btn.gif" /></a
+                    >
+
+                    <textarea
+                      id="btn-code"
+                      disabled
+                      title="Copy this to your site!"
+                      class="w-full rounded bg-black text-sm p-1"
+                      >{
+                        '<a href="https://kayh.dev" target="_blank"><img src="https://kayh.dev/btn.gif" /></a>'
+                      }</textarea
+                    >
+                  </div>
                 </section>
               </div>
 
