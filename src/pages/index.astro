@@ -3,13 +3,16 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="kayh.dev" description="My website">
+
+  <div class="w-full h-full relative">
   <div
-    class="absolute w-full h-full -z-10 opacity-10 bg-repeat"
-    style="background-image: url('/icon-192.png')"
+  class="absolute w-full h-full -z-20 opacity-10 bg-repeat"
+  style="background-image: url('/icon-192.png')"
   >
   </div>
 
-  <div class="w-full h-screen sm:py-8">
+
+<div class="w-full h-full min-h-screen sm:py-8">
     <main
       class="mx-auto h-full bg-white/10 max-w-3xl border rounded py-4 space-y-4"
     >
@@ -136,7 +139,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
 
-      <div class="space-y-2 pt-2">
+      <div class="space-y-2 pt-12">
         <ul class="px-8 flex space-x-2 w-full justify-center">
           <li>
             <img src="/ilikecomputer.png" />
@@ -177,6 +180,13 @@ import Layout from "../layouts/Layout.astro";
           </li>
         </ul>
       </div>
+
+
+    <img
+    src="/cat.png"
+    class="mx-auto py-8"
+    />
     </main>
+  </div>
   </div>
 </Layout>
