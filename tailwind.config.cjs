@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        marquee: "marquee 80s linear infinite",
+        "marquee-title": "marquee-title 80s linear infinite",
       },
       keyframes: {
-        marquee: {
+        "marquee-title": {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(-800%)" },
         },

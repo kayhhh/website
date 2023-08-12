@@ -19,7 +19,7 @@ import Layout from "../layouts/Layout.astro";
         <div
           class="sm:max-w-sm sm:rounded mx-auto overflow-hidden whitespace-nowrap"
         >
-          <div id="marquee" class="animate-marquee">
+          <div class="animate-marquee-title">
             Virtual Architect | Web Developer | VR Enthusiast | ??? Engineer |
             3D Artist | Proudly Human | Cypherpunk | Disciple of The Sun ☼ |
             Autonomous Agent | Memetic Alchemist | Transhumanist | Part-time
@@ -29,14 +29,20 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <script>
-            // Pause animation on hover
-            const marquee = document.getElementById("marquee");
-            marquee.addEventListener("mouseenter", () => {
-              marquee.style.animationPlayState = "paused";
-            });
-            marquee.addEventListener("mouseleave", () => {
-              marquee.style.animationPlayState = "running";
-            });
+            // Pause marquee animations on hover
+            const title = document.querySelector(".animate-marquee-title");
+            const images = document.querySelector(".animate-marquee-images");
+
+            const marquees = [title, images];
+
+            for (const el of marquees) {
+              el.addEventListener("mouseenter", () => {
+                el.style.animationPlayState = "paused";
+              });
+              el.addEventListener("mouseleave", () => {
+                el.style.animationPlayState = "running";
+              });
+            }
           </script>
         </div>
 
@@ -351,7 +357,60 @@ import Layout from "../layouts/Layout.astro";
           </ul>
         </div>
 
-        <img src="/cat.png" class="mx-auto" />
+        <img id="random-img" class="duration-500 mx-auto h-40 cursor-pointer" />
+
+        <script>
+          // Switch random images in the slot
+          const randomImg = document.getElementById("random-img");
+
+          const images = [
+            "/brad.png",
+            "/rover.gif",
+            "/birb.gif",
+            "/miku-noo.gif",
+            "/shame-cube.gif",
+            "/cat.png",
+            "/oof.gif",
+            "/moominarc.png",
+            "/aqua.gif",
+            "/icecream.gif",
+            "/lain-dance.gif",
+          ];
+
+          let timeout;
+
+          const switchImg = () => {
+            if (timeout) {
+              clearTimeout(timeout);
+            }
+
+            // Exit right
+            randomImg.style.transform = "translateX(100vw)";
+            randomImg.style.transition = "transform 0.5s ease-in-out";
+
+            timeout = setTimeout(() => {
+              // Teleport left
+              randomImg.style.transform = "translateX(-100vw)";
+              randomImg.style.transition = "none";
+
+              timeout = setTimeout(() => {
+                const random = Math.floor(Math.random() * images.length);
+                randomImg.src = images[random];
+
+                // Enter left
+                randomImg.style.transform = "translateX(0)";
+                randomImg.style.transition = "transform 0.5s ease-in-out";
+              }, 500);
+            }, 500);
+          };
+
+          switchImg();
+
+          setInterval(switchImg, 20000);
+
+          // Change on click
+          randomImg.addEventListener("click", switchImg);
+        </script>
       </main>
     </div>
   </div>
