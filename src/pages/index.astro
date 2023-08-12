@@ -393,10 +393,11 @@ import Layout from "../layouts/Layout.astro";
               randomImg.style.transform = "translateX(-100vw)";
               randomImg.style.transition = "none";
 
-              timeout = setTimeout(() => {
-                const random = Math.floor(Math.random() * images.length);
-                randomImg.src = images[random];
+              // Replace image
+              const random = Math.floor(Math.random() * images.length);
+              randomImg.src = images[random];
 
+              timeout = setTimeout(() => {
                 // Enter left
                 randomImg.style.transform = "translateX(0)";
                 randomImg.style.transition = "transform 0.5s ease-in-out";
