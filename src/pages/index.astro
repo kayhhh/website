@@ -54,10 +54,10 @@ import Layout from "../layouts/Layout.astro";
               <hr class="border-neutral-500 pb-2" />
               <p>
                 Hi, I'm Kayh! Welcome to my site! I like VR and making 3D things
-                and anime and music and coding (I use Neovim btw) and Monster energy drinks
-                and Persona and Undertale and Lain and Hunter X Hunter
-                and YOU. I spend a lot of time in VRChat, so if you see me
-                around come say hi!
+                and anime and music and coding (I use Neovim btw) and Monster
+                energy drinks and Persona and Undertale and Lain and Hunter X
+                Hunter. I spend a lot of time in VRChat, so if you see me around
+                come say hi!
                 <br />
                 <br />
                  Also I'm building an open source 3D platform called
@@ -77,7 +77,7 @@ import Layout from "../layouts/Layout.astro";
                   <ul>
                     <li>
                       <a
-                        href="https://unavi.xyz"
+                        href="https://github.com/unavi-xyz/unavi"
                         target="_blank"
                         class="hover:underline">UNAVI</a
                       >
@@ -237,7 +237,8 @@ import Layout from "../layouts/Layout.astro";
                   <a
                     href="https://mirror.xyz/kayh-online.eth"
                     target="_blank"
-                    class="hover:underline">Mirror</a
+                    class="hover:underline"
+                    >Mirror<span class="pl-6">{"<-- blog"}</span></a
                   >
                 </li>
                 <li>
@@ -358,7 +359,7 @@ import Layout from "../layouts/Layout.astro";
           </ul>
         </div>
 
-        <img id="random-img" class="duration-500 mx-auto h-40 cursor-pointer" />
+        <img id="random-img" class="mx-auto h-40 cursor-pointer" />
 
         <script>
           // Switch random images in the slot
@@ -378,40 +379,14 @@ import Layout from "../layouts/Layout.astro";
             "/lain-dance.gif",
           ];
 
-          let timeout;
+          function setImage() {
+            const random = Math.floor(Math.random() * images.length);
+            randomImg.src = images[random];
+          }
 
-          const switchImg = () => {
-            if (timeout) {
-              clearTimeout(timeout);
-            }
+          setImage();
 
-            // Exit right
-            randomImg.style.transform = "translateX(100vw)";
-            randomImg.style.transition = "transform 0.5s ease-in-out";
-
-            timeout = setTimeout(() => {
-              // Teleport left
-              randomImg.style.transform = "translateX(-100vw)";
-              randomImg.style.transition = "none";
-
-              // Replace image
-              const random = Math.floor(Math.random() * images.length);
-              randomImg.src = images[random];
-
-              timeout = setTimeout(() => {
-                // Enter left
-                randomImg.style.transform = "translateX(0)";
-                randomImg.style.transition = "transform 0.5s ease-in-out";
-              }, 500);
-            }, 500);
-          };
-
-          switchImg();
-
-          setInterval(switchImg, 20000);
-
-          // Change on click
-          randomImg.addEventListener("click", switchImg);
+          randomImg.addEventListener("click", setImage);
         </script>
       </main>
     </div>
