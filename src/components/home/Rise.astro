@@ -1,6 +1,6 @@
 <div id="rise-plc" class="mx-auto w-[190px] h-[380px]"></div>
 
-<img id="rise" src="/rise.gif" class="absolute inset-0 cursor-pointer" />
+<img id="rise" src="/rise.gif" class="z-30 absolute inset-0 cursor-pointer" />
 
 <script>
   const rise_normal = "/rise.gif";
@@ -64,13 +64,13 @@
     const rand = Math.random();
 
     if (rand < 0.3) {
-      animateGif(rise_attack, 0, 0, 900);
+      animateGif(rise_attack, -120, 30, 900);
     } else if (rand < 0.8) {
-      animateGif(rise_clumsy, -90, -7);
+      animateGif(rise_clumsy, -75, 20);
     } else if (rand < 0.95) {
       animateGif(rise_crouch, 0, 100);
     } else {
-      animateGif(rise_owo, -40, -100, 2000);
+      animateGif(rise_owo, -45, 20, 2000);
     }
   };
 
