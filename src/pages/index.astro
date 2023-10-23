@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
 import Card from "../components/Card.astro";
+
 import Title from "../components/home/Title.astro";
 import About from "../components/home/About.astro";
 import Projects from "../components/home/Projects.astro";
@@ -46,6 +48,40 @@ import DONOTPRESS from "../components/home/DONOTPRESS.astro";
       </Card>
 
       <Card rows={2}>
+        <div class="absolute -top-24 right-0 sm:-right-16 z-40 animate-float">
+          <img
+            id="neko-3d"
+            src="/neko-arc-3d.png"
+            width="120px"
+            class="hover:cursor-pointer"
+          />
+
+          <script>
+            const neko = document.getElementById("neko-3d");
+            if (!neko) {
+              throw new Error("neko-3d not found");
+            }
+
+            neko.addEventListener("click", () => {
+              // Spin!
+              neko.animate(
+                [
+                  { transform: "rotate(0deg)" },
+                  { transform: "rotate(360deg)" },
+                ],
+                {
+                  duration: 1000,
+                  iterations: 1,
+                },
+              );
+
+              // Play sound
+              const audio = new Audio("/neko-arc-sound-effect.mp3");
+              audio.play();
+            });
+          </script>
+        </div>
+
         <Links />
       </Card>
 
@@ -67,6 +103,42 @@ import DONOTPRESS from "../components/home/DONOTPRESS.astro";
 
       <Card>
         <CodeTime />
+
+        <div
+          class="absolute sm:-top-32 -left-4 -top-64 sm:-left-20 z-40 animate-float-2"
+        >
+          <img
+            id="neko-lookback"
+            src="/neko-arc-lookback.gif"
+            width="160px"
+            class="hover:cursor-pointer"
+          />
+
+          <script>
+            const neko = document.getElementById("neko-lookback");
+            if (!neko) {
+              throw new Error("neko-lookback not found");
+            }
+
+            neko.addEventListener("click", () => {
+              // Spin!
+              neko.animate(
+                [
+                  { transform: "rotate(0deg)" },
+                  { transform: "rotate(360deg)" },
+                ],
+                {
+                  duration: 1000,
+                  iterations: 1,
+                },
+              );
+
+              // Play sound
+              const audio = new Audio("/neko-arc-sound-effect.mp3");
+              audio.play();
+            });
+          </script>
+        </div>
       </Card>
 
       <Card rows={2}>

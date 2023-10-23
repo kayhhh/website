@@ -4,10 +4,22 @@ module.exports = {
   theme: {
     extend: {
       animation: {
+        "float": "float 3s ease-in-out infinite",
+        "float-2": "float2 3s ease-in-out infinite",
         "marquee": "marquee 20s alternate linear infinite",
         "marquee-title": "marquee-title 80s linear infinite",
       },
       keyframes: {
+        "float": {
+          "0%": { transform: "translateY(0%)" },
+          "50%": { transform: "translateY(6%)" },
+          "100%": { transform: "translateY(0%)" },
+        },
+        float2: {
+          "0%": { transform: "translateY(6%)" },
+          "50%": { transform: "translateY(0%)" },
+          "100%": { transform: "translateY(6%)" },
+        },
         "marquee": {
           // Goldren Ratio Spiral
           "0%": { transform: "scale(100%) translateX(0%) translateY(0%)" },
