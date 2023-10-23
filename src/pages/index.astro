@@ -14,6 +14,7 @@ import NavLink from "../components/home/NavLink.astro";
 import JohnAd from "../components/home/JohnAd.astro";
 import Buttons from "../components/home/Buttons.astro";
 import HotlineWebring from "../components/home/HotlineWebring.astro";
+import DONOTPRESS from "../components/home/DONOTPRESS.astro";
 ---
 
 <Layout title="kayh.dev" description="My website">
@@ -26,7 +27,11 @@ import HotlineWebring from "../components/home/HotlineWebring.astro";
   >
   </div>
 
-  <div class="overflow-hidden space-y-3 p-1 sm:py-4">
+  <div class="fixed hidden sm:block bottom-4 right-4">
+    <DONOTPRESS />
+  </div>
+
+  <main class="overflow-hidden space-y-3 p-1 sm:py-4">
     <div class="max-w-xl mx-auto">
       <Card>
         <Title />
@@ -84,5 +89,5 @@ import HotlineWebring from "../components/home/HotlineWebring.astro";
         <NavLink />
       </Card>
     </div>
-  </div>
+  </main>
 </Layout>

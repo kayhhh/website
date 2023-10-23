@@ -1,0 +1,19 @@
+<button id="donotpress" title="DO NOT PRESS" class="active:opacity-40 hover:shadpw hover:opacity-50 opacity-30 hover:bg-white/20 hover:text-black rounded-full p-1 aspect-square flex justify-center items-center h-8 w-8">?</button>
+
+<script>
+const button = document.getElementById('donotpress');
+if (!button) {
+    throw new Error('Button not found');
+}
+
+
+
+button.addEventListener('click', () => {
+    const main = document.querySelector('main');
+    if (!main) {
+        throw new Error('Main not found');
+    }
+
+    main.classList.toggle('animate-marquee');
+});
+</script>
