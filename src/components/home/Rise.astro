@@ -1,0 +1,78 @@
+<div id="rise-plc" class="mx-auto w-[190px] h-[380px]"></div>
+
+<img id="rise" src="/rise.gif" class="absolute inset-0 cursor-pointer" />
+
+<script>
+  const rise_normal = "/rise.gif";
+  const rise_attack = "/rise_attack.gif";
+  const rise_clumsy = "/rise_clumsy.gif";
+  const rise_crouch = "/rise_crouch.gif";
+  const rise_owo = "/rise_owo.gif";
+
+  const img = document.getElementById("rise") as HTMLImageElement | null;
+  const plc = document.getElementById("rise-plc");
+  if (!img || !plc) {
+    throw new Error("Missing elements");
+  }
+
+  let timeout: number | null = null;
+
+  // Move rise to same position as plc, plus optional offset
+  const moveRise = (x = 0, y = 0) => {
+    img.style.left = `${plc.offsetLeft + x}px`;
+    img.style.top = `${plc.offsetTop + y}px`;
+  };
+
+  moveRise();
+
+  // Initialize rise position after load, because
+  // layout shift can mess it up
+  window.addEventListener("load", () => {
+    moveRise();
+  });
+
+  window.addEventListener("resize", () => moveRise());
+
+  const animateGif = (path: string, x = 0, y = 0, len = 800) => {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    // Add opacity transitions because of weird flickering
+    // that sometimes happens when changing gifs
+    img.style.opacity = "0";
+
+    img.src = path;
+    moveRise(x, y);
+
+    timeout = setTimeout(() => {
+      img.style.opacity = "1";
+
+      timeout = setTimeout(() => {
+        img.style.opacity = "0";
+        img.src = rise_normal;
+        moveRise();
+
+        timeout = setTimeout(() => {
+          img.style.opacity = "1";
+        }, 50);
+      }, len);
+    }, 50);
+  };
+
+  const animate = () => {
+    const rand = Math.random();
+
+    if (rand < 0.3) {
+      animateGif(rise_attack, 0, 0, 900);
+    } else if (rand < 0.8) {
+      animateGif(rise_clumsy, -90, -7);
+    } else if (rand < 0.95) {
+      animateGif(rise_crouch, 0, 100);
+    } else {
+      animateGif(rise_owo, -40, -100, 2000);
+    }
+  };
+
+  img.addEventListener("click", animate);
+</script>

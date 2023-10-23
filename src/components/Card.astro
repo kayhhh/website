@@ -1,0 +1,26 @@
+---
+const columns = Astro.props.columns ?? 1;
+const rows = Astro.props.rows ?? 1;
+const center = Astro.props.center ?? false;
+---
+
+<div
+  class={`bg-gradient-to-t from-slate-950/50 to-slate-950/40 border border-white/80 backdrop-blur-2xl shadow-md rounded-xl py-3 px-6 ${
+    columns === 2
+      ? "sm:col-span-2"
+      : columns === 3
+      ? "sm:col-span-2 md:col-span-3"
+      : ""
+  }
+  ${
+    rows === 2
+      ? "sm:row-span-2"
+      : rows === 3
+      ? "sm:row-span-2 md:row-span-3"
+      : ""
+  }
+  ${center ? "flex justify-center items-center" : ""}
+  `}
+>
+  <slot />
+</div>

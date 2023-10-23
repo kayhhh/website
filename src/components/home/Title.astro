@@ -1,0 +1,70 @@
+<h1 class="text-center font-medium text-6xl">Kayh</h1>
+
+<div class="max-w-sm rounded mx-auto overflow-hidden whitespace-nowrap">
+  <h3 id="titles" class="animate-marquee-title"></h3>
+</div>
+
+<script>
+  // Randomize title order
+  const titles = [
+    "Virtual Architect",
+    "W*b Developer",
+    "VR Enthusiast",
+    "??? Engineer",
+    "3D Artist",
+    "Proudly Human",
+    "Cypherpunk",
+    "Disciple of The Sun ☀️",
+    "Autonomous Agent",
+    "Memetic Alchemist",
+    "Humanist",
+    "Part-time NEET",
+    "Pre-rich",
+    "Enlightened by Nix",
+    "Cyberspace Native",
+    "Magician",
+    "Wielder of the Power of Friendship",
+    "Open Source Advocate",
+    "Designer",
+    "Lover of People ❤️",
+    "Accelerationist",
+    "Playing the Infinite Game",
+    "CEO of Something",
+    "🦀 Rustacean",
+    "Neovim Configurer",
+    "Digital Archaeologist",
+  ];
+
+  function shuffle(items: string[]) {
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      const item1 = items[i];
+      const item2 = items[j];
+
+      if (!item1 || !item2) {
+        continue;
+      }
+
+      items[i] = item2;
+      items[j] = item1;
+    }
+  }
+
+  shuffle(titles);
+
+  const titlesEl = document.getElementById("titles");
+  if (!titlesEl) {
+    throw new Error("Missing element");
+  }
+
+  titlesEl.innerHTML = titles.join(" | ");
+
+  // Pause marquee animations on hover
+  titlesEl.addEventListener("mouseenter", () => {
+    titlesEl.style.animationPlayState = "paused";
+  });
+  titlesEl.addEventListener("mouseleave", () => {
+    titlesEl.style.animationPlayState = "running";
+  });
+</script>
