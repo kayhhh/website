@@ -5,88 +5,114 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="kayh.dev" description="My website">
   <div class="w-full h-full relative">
     <div
-      class="absolute w-full h-full -z-20 opacity-10 bg-repeat"
+      class="absolute w-full h-full opacity-5 bg-repeat"
       style="background-image: url('/icon-192.png')"
     >
     </div>
 
-    <div class="w-full h-full min-h-screen p-1 sm:p-0 sm:m-0 sm:py-8">
+    <div
+      class="w-full h-full min-h-screen p-1 bg-gradient-to-tr from-cyan-700 to-red-500 sm:p-0 sm:m-0 sm:py-8"
+    >
       <main
-        class="relative mx-auto h-full bg-white/10 overflow-hidden max-w-3xl border rounded py-4"
+        class="relative mx-auto h-full text-2xl bg-slate-950/50 overflow-hidden max-w-3xl border rounded-lg py-4"
       >
-        <h1 class="text-center font-medium text-5xl">Kayh</h1>
+        <h1 class="text-center font-medium text-6xl">Kayh</h1>
 
         <div
           class="sm:max-w-sm sm:rounded mx-auto overflow-hidden whitespace-nowrap"
         >
-          <div class="animate-marquee-title">
-            Virtual Architect | Web Developer | VR Enthusiast | ??? Engineer |
-            3D Artist | Proudly Human | Cypherpunk | Disciple of The Sun ☼ |
-            Autonomous Agent | Memetic Alchemist | Transhumanist | Part-time
-            NEET | Multi-billionaire | Enlightened by Nix | Cyberspace Native |
-            Magician | Wielder of the Power of Friendship | Open Source Advocate
-            | Designer | Lover of People ♥ | Accelerationist | Playing the
-            Infinite Game
-          </div>
+          <div id="titles" class="animate-marquee-title"></div>
 
           <script>
-            // Pause marquee animations on hover
-            const title = document.querySelector(".animate-marquee-title");
-            const images = document.querySelector(".animate-marquee-images");
+            // Randomize title order
+            const titles = [
+              "Virtual Architect",
+              "W*b Developer",
+              "VR Enthusiast",
+              "??? Engineer",
+              "3D Artist",
+              "Proudly Human",
+              "Cypherpunk",
+              "Disciple of The Sun ☼",
+              "Autonomous Agent",
+              "Memetic Alchemist",
+              "Humanist",
+              "Part-time NEET",
+              "Pre-rich",
+              "Enlightened by Nix",
+              "Cyberspace Native",
+              "Magician",
+              "Wielder of the Power of Friendship",
+              "Open Source Advocate",
+              "Designer",
+              "Lover of People ❤️",
+              "Accelerationist",
+              "Playing the Infinite Game",
+              "CEO of something",
+              "🦀 Rustacean",
+              "Neovim Configurer",
+              "Digital Archaeologist",
+            ];
 
-            const marquees = [title, images];
+            function shuffle(items: string[]) {
+              for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
 
-            for (const el of marquees) {
-              el.addEventListener("mouseenter", () => {
-                el.style.animationPlayState = "paused";
-              });
-              el.addEventListener("mouseleave", () => {
-                el.style.animationPlayState = "running";
-              });
+                const item1 = items[i];
+                const item2 = items[j];
+
+                if (!item1 || !item2) {
+                  continue;
+                }
+
+                items[i] = item2;
+                items[j] = item1;
+              }
             }
+
+            shuffle(titles);
+
+            const titlesEl = document.getElementById("titles");
+            if (!titlesEl) {
+              throw new Error("Missing element");
+            }
+
+            titlesEl.innerHTML = titles.join(" | ");
+
+            // Pause marquee animations on hover
+            titlesEl.addEventListener("mouseenter", () => {
+              titlesEl.style.animationPlayState = "paused";
+            });
+            titlesEl.addEventListener("mouseleave", () => {
+              titlesEl.style.animationPlayState = "running";
+            });
           </script>
         </div>
 
         <div class="flex flex-col sm:flex-row sm:space-x-8 px-8">
           <div class="w-full space-y-8">
             <section>
-              <h2>About Me</h2>
-              <hr class="border-neutral-500 pb-2" />
+              <h2 class="text-cyan-400">About Me</h2>
+              <hr class="border-slate-500 pb-2" />
+
               <p>
-                Hi, I'm Kayh! Welcome to my site! I like VR and making 3D things
-                and anime and music and coding (I use Neovim btw) and Monster
-                energy drinks and Persona and Undertale and Lain and Hunter X
-                Hunter. I spend a lot of time in VRChat, so if you see me around
-                come say hi!
-                <br />
-                <br />
-                 Also I'm building an open source 3D platform called
-                <a
-                  href="https://unavi.xyz"
-                  target="_blank"
-                  class="text-cyan-400 hover:underline">UNAVI</a
-                >, check it out!
+                Hi, I'm Kayh! Welcome to my site! I'm a self-taught developer
+                building things I think are cool. I also play a lot of VRChat,
+                so if you see me around say hi!
               </p>
             </section>
 
             <div class="grid grid-cols-2">
               <div class="space-y-8">
                 <section>
-                  <h2>Projects</h2>
-                  <hr class="border-neutral-500 pb-2" />
+                  <h2 class="text-red-400">Projects</h2>
+                  <hr class="border-slate-500 pb-2" />
                   <ul>
                     <li>
                       <a
                         href="https://github.com/unavi-xyz/unavi"
                         target="_blank"
                         class="hover:underline">UNAVI</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/unavi-xyz/houseki"
-                        target="_blank"
-                        class="hover:underline">Houseki</a
                       >
                     </li>
                     <li>
@@ -100,8 +126,8 @@ import Layout from "../layouts/Layout.astro";
                 </section>
 
                 <section>
-                  <h2>Code Time</h2>
-                  <hr class="border-neutral-500 pb-2" />
+                  <h2 class="text-purple-400">Code Time</h2>
+                  <hr class="border-slate-500 pb-2" />
                   <a
                     href="https://wakatime.com/@cb710a2e-6926-4408-ada5-d04bdfa541f7"
                     class="pt-1"
@@ -113,8 +139,8 @@ import Layout from "../layouts/Layout.astro";
                 </section>
 
                 <section>
-                  <h2>Button</h2>
-                  <hr class="border-neutral-500 pb-2" />
+                  <h2 class="text-pink-400">Button</h2>
+                  <hr class="border-slate-500 pb-2" />
 
                   <div
                     class="border p-2 space-y-1.5 flex flex-col items-center rounded"
@@ -149,10 +175,15 @@ import Layout from "../layouts/Layout.astro";
                 const rise_crouch = "/rise_crouch.gif";
                 const rise_owo = "/rise_owo.gif";
 
-                const img = document.getElementById("rise");
+                const img = document.getElementById(
+                  "rise",
+                ) as HTMLImageElement | null;
                 const plc = document.getElementById("rise-plc");
+                if (!img || !plc) {
+                  throw new Error("Missing elements");
+                }
 
-                let timeout = null;
+                let timeout: number | null = null;
 
                 // Move rise to same position as plc, plus optional offset
                 const moveRise = (x = 0, y = 0) => {
@@ -216,8 +247,8 @@ import Layout from "../layouts/Layout.astro";
 
           <div class="sm:w-[180px] flex flex-col-reverse sm:flex-col">
             <section class="pt-2 pb-2 sm:pt-0">
-              <h2>Links</h2>
-              <hr class="border-neutral-500 pb-2" />
+              <h2 class="text-green-400">Links</h2>
+              <hr class="border-slate-500 pb-2" />
               <ul>
                 <li>
                   <a
@@ -241,13 +272,13 @@ import Layout from "../layouts/Layout.astro";
                     >Mirror<span class="pl-6">{"<-- blog"}</span></a
                   >
                 </li>
-                <li>
-                  <a
-                    href="https://vrchat.com/home/user/usr_26b4f71e-a89f-47b5-9579-4700283c3cf5"
-                    target="_blank"
-                    class="hover:underline">VRChat</a
-                  >
-                </li>
+                <!-- <li> -->
+                <!--   <a -->
+                <!--     href="https://vrchat.com/home/user/usr_26b4f71e-a89f-47b5-9579-4700283c3cf5" -->
+                <!--     target="_blank" -->
+                <!--     class="hover:underline">VRChat</a -->
+                <!--   > -->
+                <!-- </li> -->
                 <li>
                   <a
                     href="https://myanimelist.net/profile/kayh_online"
@@ -259,8 +290,8 @@ import Layout from "../layouts/Layout.astro";
             </section>
 
             <section class="py-2">
-              <h2>Groups</h2>
-              <hr class="border-neutral-500 pb-2" />
+              <h2 class="text-blue-400">Groups</h2>
+              <hr class="border-slate-500 pb-2" />
               <ul>
                 <li>
                   <a
@@ -282,19 +313,19 @@ import Layout from "../layouts/Layout.astro";
             </div>
 
             <section class="py-2 space-y-1">
-              <hr class="border-neutral-500" />
+              <hr class="border-slate-500" />
               <div class="flex justify-between">
                 <a
                   href="https://hotlinewebring.club/kayh/previous"
-                  class="hover:underline">{"<--"}</a
+                  class="hover:underline">{"<-"}</a
                 >
-                <h2>Hotline Webring</h2>
+                <h2 class="text-amber-300">Hotline Webring</h2>
                 <a
                   href="https://hotlinewebring.club/kayh/next"
-                  class="hover:underline">{"-->"}</a
+                  class="hover:underline">{"->"}</a
                 >
               </div>
-              <hr class="border-neutral-500" />
+              <hr class="border-slate-500" />
             </section>
 
             <img
@@ -357,37 +388,13 @@ import Layout from "../layouts/Layout.astro";
               >
             </li>
           </ul>
+
         </div>
 
-        <img id="random-img" class="mx-auto h-40 cursor-pointer" />
-
-        <script>
-          // Switch random images in the slot
-          const randomImg = document.getElementById("random-img");
-
-          const images = [
-            "/brad.png",
-            "/rover.gif",
-            "/birb.gif",
-            "/miku-noo.gif",
-            "/shame-cube.gif",
-            "/cat.png",
-            "/oof.gif",
-            "/moominarc.png",
-            "/aqua.gif",
-            "/icecream.gif",
-            "/lain-dance.gif",
-          ];
-
-          function setImage() {
-            const random = Math.floor(Math.random() * images.length);
-            randomImg.src = images[random];
-          }
-
-          setImage();
-
-          randomImg.addEventListener("click", setImage);
-        </script>
+        <iframe
+        src="https://john.citrons.xyz/embed?ref=kayh.dev"
+        style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"
+        ></iframe>
       </main>
     </div>
   </div>

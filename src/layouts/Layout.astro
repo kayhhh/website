@@ -1,11 +1,12 @@
 ---
 interface Props {
   title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
 
-import "@fontsource/vt323";
+import "@fontsource/cute-font";
 ---
 
 <!DOCTYPE html>
@@ -39,7 +40,7 @@ import "@fontsource/vt323";
   </body>
 </html>
 <style>
-  html {
-    font-family: "VT323", sans-serif !important;
+  body {
+    font-family: "Cute Font", sans-serif;
   }
 </style>
