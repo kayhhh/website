@@ -46,7 +46,7 @@ module.exports = {
         },
         "marquee-title": {
           "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(-800%)" },
+          "100%": { transform: "translateX(-900%)" },
         },
       },
     },
