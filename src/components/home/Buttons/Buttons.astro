@@ -1,41 +1,42 @@
+---
+import { Image } from "astro:assets";
+
+import ilikecomputer from "./ilikecomputer.png";
+import lain from "./lain.gif";
+import miku from "./miku.gif";
+import internetarchive from "./internetarchive.gif";
+import jquery from "./jquery.gif";
+import buyit from "./buyit.gif";
+---
+
 <ul class="grid grid-cols-3 gap-1">
   <li>
-    <img
-      src="/ilikecomputer.png"
-      alt="I LIKE COMPUTER"
-      width="88px"
-      height="31px"
-    />
+    <Image src={ilikecomputer} alt="I LIKE COMPUTER" width={88} height={31} />
   </li>
 
   <li>
-    <img src="/lain-1.gif" alt="Lain" width="88px" height="31px" />
+    <Image src={lain} alt="Lain" width={88} height={31} />
   </li>
 
   <li>
-    <img
-      src="/miku.gif"
-      alt="this site is MIKU APPROVED"
-      width="88px"
-      height="31px"
-    />
+    <Image src={miku} alt="this site is MIKU APPROVED" width={88} height={31} />
   </li>
 
   <li>
-    <img src="/jquery.gif" alt="jQuery is evil!" width="88px" height="31px" />
+    <Image src={jquery} alt="jQuery is evil!" width={88} height={31} />
   </li>
 
   <li>
-    <img src="/buyit.gif" alt="MUG ROOT BEER" width="88px" height="31px" />
+    <Image src={buyit} alt="MUG ROOT BEER" width={88} height={31} />
   </li>
 
   <li>
     <a href="https://archive.org/" target="_blank">
-      <img
-        src="/internetarchive.gif"
+      <Image
+        src={internetarchive}
         alt="Internet Archive"
-        width="88px"
-        height="31px"
+        width={88}
+        height={31}
       />
     </a>
   </li>

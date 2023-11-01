@@ -2,22 +2,26 @@
 import Layout from "../layouts/Layout.astro";
 
 import Card from "../components/Card.astro";
-
 import Title from "../components/home/Title.astro";
 import About from "../components/home/About.astro";
 import Projects from "../components/home/Projects.astro";
 import CodeTime from "../components/home/CodeTime.astro";
 import SiteButton from "../components/home/SiteButton.astro";
-import Rise from "../components/home/Rise.astro";
+import Rise from "../components/home/Rise/Rise.astro";
 import Links from "../components/home/Links.astro";
 import Groups from "../components/home/Groups.astro";
 import ViewCount from "../components/home/ViewCount.astro";
 import NavLink from "../components/home/NavLink.astro";
 import JohnAd from "../components/home/JohnAd.astro";
-import Buttons from "../components/home/Buttons.astro";
+import Buttons from "../components/home/Buttons/Buttons.astro";
 import HotlineWebring from "../components/home/HotlineWebring.astro";
 import Music from "../components/home/Music.astro";
 import DONOTPRESS from "../components/home/DONOTPRESS.astro";
+
+import { Image } from "astro:assets";
+
+import nekoarc3d from "./neko-arc-3d.png";
+import nekoarclookback from "./neko-arc-lookback.gif";
 ---
 
 <Layout title="kayh.dev" description="My website">
@@ -50,12 +54,12 @@ import DONOTPRESS from "../components/home/DONOTPRESS.astro";
 
       <Card rows={2}>
         <div class="absolute -top-24 -right-4 sm:-right-16 z-40 animate-float">
-          <img
+          <Image
             id="neko-3d"
-            src="/neko-arc-3d.png"
+            src={nekoarc3d}
             alt="Neko Arc 3D"
-            width="120px"
-            height="213px"
+            width={120}
+            height={213}
             class="hover:cursor-pointer"
           />
 
@@ -110,12 +114,12 @@ import DONOTPRESS from "../components/home/DONOTPRESS.astro";
         <div
           class="absolute sm:-top-32 -left-4 -top-64 sm:-left-20 z-40 animate-float-2"
         >
-          <img
+          <Image
             id="neko-lookback"
-            src="/neko-arc-lookback.gif"
+            src={nekoarclookback}
             alt="Neko Arc"
-            width="160px"
-            height="160px"
+            width={160}
+            height={160}
             class="hover:cursor-pointer"
           />
 
@@ -146,7 +150,7 @@ import DONOTPRESS from "../components/home/DONOTPRESS.astro";
         </div>
       </Card>
 
-      <Card rows={2}>
+      <Card center rows={2}>
         <Rise />
       </Card>
 
