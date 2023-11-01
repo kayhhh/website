@@ -7,7 +7,7 @@ module.exports = {
         "float": "float 3s ease-in-out infinite",
         "float-2": "float2 3s ease-in-out infinite",
         "marquee": "marquee 20s alternate linear infinite",
-        "marquee-title": "marquee-title 80s linear infinite",
+        "marquee-title": "marquee-title 100s linear infinite",
       },
       keyframes: {
         "float": {
