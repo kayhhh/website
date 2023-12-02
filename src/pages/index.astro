@@ -1,21 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Card from "../components/Card.astro";
-import Title from "../components/home/Title.astro";
 import About from "../components/home/About.astro";
-import Projects from "../components/home/Projects.astro";
-import CodeTime from "../components/home/CodeTime.astro";
-import SiteButton from "../components/home/SiteButton.astro";
-import Rise from "../components/home/Rise/Rise.astro";
-import Links from "../components/home/Links.astro";
-import Groups from "../components/home/Groups.astro";
-import ViewCount from "../components/home/ViewCount.astro";
-import NavLink from "../components/home/NavLink.astro";
-import JohnAd from "../components/home/JohnAd.astro";
 import Buttons from "../components/home/Buttons/Buttons.astro";
+import Card from "../components/Card.astro";
+import CodeTime from "../components/home/CodeTime.astro";
+import Groups from "../components/home/Groups.astro";
 import HotlineWebring from "../components/home/HotlineWebring.astro";
+import JohnAd from "../components/home/JohnAd.astro";
+import Links from "../components/home/Links.astro";
 import Music from "../components/home/Music.astro";
+import NavLink from "../components/home/NavLink.astro";
+import Projects from "../components/home/Projects.astro";
+import Rise from "../components/home/Rise/Rise.astro";
+import SiteButton from "../components/home/SiteButton.astro";
+import Sponsor from "../components/home/Sponsor.astro";
+import Title from "../components/home/Title.astro";
+import ViewCount from "../components/home/ViewCount.astro";
 
 import { Image } from "astro:assets";
 
@@ -165,8 +166,12 @@ import nekoarclookback from "./neko-arc-lookback.gif";
         <NavLink />
       </Card>
 
-      <Card center columns={2}>
+      <Card center>
         <Music />
+      </Card>
+
+      <Card center>
+        <Sponsor />
       </Card>
     </div>
   </main>
