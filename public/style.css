@@ -1,0 +1,16 @@
+body {
+  @apply bg-slate-900 text-white;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  @apply text-cyan-300 hover:text-blue-400 font-semibold underline transition-colors duration-200;
+}
+
+h1 {
+  @apply text-4xl font-bold mb-4;
+}
+
+h2 {
+  @apply text-3xl font-bold mb-2;
+}

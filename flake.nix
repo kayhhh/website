@@ -27,6 +27,7 @@
         native_build_inputs = with pkgs; [
           binaryen
           cargo-auditable
+          nodePackages.prettier
           pkg-config
           tailwindcss
           wasm-bindgen-cli
