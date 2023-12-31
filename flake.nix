@@ -28,6 +28,7 @@
           binaryen
           cargo-auditable
           pkg-config
+          tailwindcss
           wasm-bindgen-cli
         ];
 
