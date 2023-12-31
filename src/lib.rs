@@ -35,14 +35,16 @@ fn App() -> impl IntoView {
                     <NavLinkAd/>
                 </Card>
 
-                <span class="row-span-2">
-                    <Card>
-                        <Links/>
-                    </Card>
-                </span>
+                <Card>
+                    <Links/>
+                </Card>
 
                 <Card>
                     <Projects/>
+                </Card>
+
+                <Card>
+                    <Music/>
                 </Card>
 
                 <span class="col-span-2">
@@ -50,7 +52,6 @@ fn App() -> impl IntoView {
                         <RetroButtons/>
                     </Card>
                 </span>
-
             </div>
         </div>
     }
@@ -197,6 +198,20 @@ fn RetroButtons() -> impl IntoView {
                     height=31
                 />
             </a>
+        </div>
+    }
+}
+
+#[component]
+fn Music() -> impl IntoView {
+    view! {
+        <div class="h-full flex justify-center items-center">
+            <audio src="/public/lucki-2021-vibes.mp3" controls autoplay></audio>
+
+            <script>
+                let audio = document.querySelector("audio");
+                audio.volume = 0.5;
+            </script>
         </div>
     }
 }
