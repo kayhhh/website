@@ -3,8 +3,19 @@ name = "website"
 publish = false
 version = "0.0.0"
 edition = "2021"
-repository = ""
+repository = "https://github.com/kayhhh/website"
 license = "GPL-3.0-or-later"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
 
 [profile.release]
 lto = true
+
+[profile.wasm-release]
+inherits = "release"
+codegen-units = 1
+opt-level = "z"
+
+[dependencies]
+wasm-bindgen = "0.2.89"
