@@ -34,7 +34,13 @@ fn App() -> impl IntoView {
                 </span>
 
                 <Card>
-                    <NavLinkAd/>
+                    <img
+                        src="https://count.getloli.com/get/@kayh"
+                        alt="Site View Count"
+                        width=283
+                        height=90
+                        class="mx-auto"
+                    />
                 </Card>
 
                 <Card>
@@ -43,6 +49,10 @@ fn App() -> impl IntoView {
 
                 <Card>
                     <Projects/>
+                </Card>
+
+                <Card>
+                    <NavLinkAd/>
                 </Card>
 
                 <Card>
