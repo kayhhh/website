@@ -28,22 +28,22 @@ fn Links() -> impl IntoView {
             <ul>
                 <li>
                     <a href="https://github.com/kayhhh" target="_blank">
-                        GitHub
+                        "GitHub"
                     </a>
                 </li>
                 <li>
                     <a href="https://twitter.com/kayh_online" target="_blank">
-                        Twitter
+                        "Twitter"
                     </a>
                 </li>
                 <li>
                     <a href="https://mirror.xyz/kayh-online.eth" target="_blank">
-                        Mirror
+                        "Blog"
                     </a>
                 </li>
                 <li>
                     <a href="https://myanimelist.net/profile/kayh_online" target="_blank">
-                        MyAnimeList
+                        "MyAnimeList"
                     </a>
                 </li>
             </ul>
