@@ -30,7 +30,7 @@ fn App() -> impl IntoView {
                             alt="Neko Arc 3D"
                             width=120
                             height=213
-                            class="absolute -right-[150px] -top-[80px] animate-float"
+                            class="absolute -right-[160px] -top-[80px] animate-float"
                         />
                     </Card>
                 </span>
