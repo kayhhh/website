@@ -23,13 +23,6 @@ let
 in {
   wasm = rustPlatform.buildRustPackage (common // {
     pname = "website";
-    buildPhase = ''
-      cargo build --target wasm32-unknown-unknown --profile wasm-release
-    '';
-    installPhase = ''
-      mkdir -p $out/pages/wasm
-      wasm-bindgen --out-dir $out/pages/wasm --target web --no-typescript target/wasm32-unknown-unknown/wasm-release/website.wasm 
-      wasm-opt -Oz $out/pages/wasm/website_bg.wasm -o $out/pages/wasm/website_bg.wasm
-    '';
+    buildPhase = "trunk build --release";
   });
 }
