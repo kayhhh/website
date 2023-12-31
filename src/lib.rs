@@ -65,8 +65,8 @@ fn Links() -> impl IntoView {
                     </a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/kayh_online" target="_blank">
-                        "[Twitter]"
+                    <a href="https://x.com/kayh_online" target="_blank">
+                        "[X]"
                     </a>
                 </li>
                 <li>
