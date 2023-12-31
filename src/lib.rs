@@ -60,7 +60,7 @@ fn App() -> impl IntoView {
                 </Card>
 
                 <Card>
-                    <Links/>
+                    <Socials/>
                 </Card>
 
                 <Card>
@@ -113,7 +113,7 @@ fn About() -> impl IntoView {
 }
 
 #[component]
-fn Links() -> impl IntoView {
+fn Socials() -> impl IntoView {
     view! {
         <div>
             <h2 class="text-green-400">"Socials"</h2>
@@ -174,7 +174,7 @@ fn Projects() -> impl IntoView {
                     <a href="https://github.com/unavi-xyz/unavi" target="_blank">
                         "[UNAVI]"
                     </a>
-                    <span class="text-slate-400">"/"</span>
+                    <span>"/"</span>
                     <a href="https://github.com/unavi-xyz/wired-protocol" target="_blank">
                         "[The Wired]"
                     </a>
