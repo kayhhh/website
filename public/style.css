@@ -1,16 +1,17 @@
 body {
   @apply bg-slate-900 text-white;
-  font-family: "Roboto Mono", monospace;
-}
-
-a {
-  @apply text-cyan-300 hover:text-blue-400 font-semibold underline transition-colors duration-200;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 h1 {
-  @apply text-4xl font-bold mb-4;
+  @apply text-2xl text-red-300 font-bold;
 }
 
 h2 {
-  @apply text-3xl font-bold mb-2;
+  @apply text-slate-400;
+}
+
+a {
+  @apply text-cyan-300 hover:text-blue-400 transition-colors duration-200;
 }
