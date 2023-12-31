@@ -18,6 +18,8 @@ fn App() -> impl IntoView {
         <div class="max-w-2xl mx-auto py-8 grid gap-4">
             <h1 class="text-center">"kayh.dev"</h1>
 
+            <Nav/>
+
             <div class="grid gap-4">
                 <span class="col-span-2">
                     <Card>
@@ -58,10 +60,20 @@ fn App() -> impl IntoView {
 }
 
 #[component]
+fn Nav() -> impl IntoView {
+    view! {
+        <nav class="flex justify-center space-x-2 pb-1">
+            <a href="/">"[Home]"</a>
+            <a href="https://mirror.xyz/kayh-online.eth">"[Blog]"</a>
+        </nav>
+    }
+}
+
+#[component]
 fn About() -> impl IntoView {
     view! {
         <div>
-            <h2>"About"</h2>
+            <h2 class="text-blue-400">"About"</h2>
 
             <p>
                 "Hi, I'm Kayh! Welcome to my site! I'm a self-taught developer building things I think are cool. I play a lot of VRChat, so if you see me around come say hi!"
@@ -74,7 +86,7 @@ fn About() -> impl IntoView {
 fn Links() -> impl IntoView {
     view! {
         <div>
-            <h2>"Links"</h2>
+            <h2 class="text-green-400">"Socials"</h2>
 
             <ul>
                 <li>
@@ -85,11 +97,6 @@ fn Links() -> impl IntoView {
                 <li>
                     <a href="https://x.com/kayh_online" target="_blank">
                         "[X]"
-                    </a>
-                </li>
-                <li>
-                    <a href="https://mirror.xyz/kayh-online.eth" target="_blank">
-                        "[Blog]"
                     </a>
                 </li>
                 <li>
@@ -130,18 +137,20 @@ fn NavLinkAd() -> impl IntoView {
 fn Projects() -> impl IntoView {
     view! {
         <div>
-            <h2>"Projects"</h2>
+            <h2 class="text-purple-400">"Projects"</h2>
 
             <ul>
-                <li>
+                <li class="space-x-1">
                     <a href="https://github.com/unavi-xyz/unavi" target="_blank">
                         "[UNAVI]"
                     </a>
-                </li>
-                <li>
+                    <span class="text-slate-400">"/"</span>
                     <a href="https://github.com/unavi-xyz/wired-protocol" target="_blank">
                         "[The Wired]"
                     </a>
+                </li>
+                <li>
+                    <a href="https://vrm-viewer.kayh.dev/">"[VRM Viewer]"</a>
                 </li>
             </ul>
         </div>

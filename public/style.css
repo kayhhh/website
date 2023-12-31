@@ -8,10 +8,6 @@ h1 {
   @apply text-2xl text-red-300 font-bold;
 }
 
-h2 {
-  @apply text-slate-400;
-}
-
 a {
   @apply text-cyan-300 hover:text-blue-400 transition-colors duration-200;
 }
