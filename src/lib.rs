@@ -24,6 +24,14 @@ fn App() -> impl IntoView {
                 <span class="md:col-span-2">
                     <Card>
                         <About/>
+
+                        <img
+                            src="/public/neko-arc-3d.png"
+                            alt="Neko Arc 3D"
+                            width=120
+                            height=213
+                            class="absolute -right-[150px] -top-[80px] animate-float"
+                        />
                     </Card>
                 </span>
 
@@ -40,6 +48,14 @@ fn App() -> impl IntoView {
                         width=283
                         height=90
                         class="mx-auto"
+                    />
+
+                    <img
+                        src="/public/neko-arc-lookback.gif"
+                        alt="Neko Arc"
+                        width=160
+                        height=160
+                        class="absolute -left-[160px] -top-[50px] animate-float2"
                     />
                 </Card>
 
