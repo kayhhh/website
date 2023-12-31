@@ -15,19 +15,19 @@ pub fn start() {
 #[component]
 fn App() -> impl IntoView {
     view! {
-        <div class="max-w-2xl mx-auto py-8 grid gap-4">
-            <h1 class="text-center">"kayh.dev"</h1>
+        <div class="max-w-2xl mx-auto py-8 px-4">
+            <h1 class="text-center pb-2">"kayh.dev"</h1>
 
             <Nav/>
 
-            <div class="grid gap-4">
-                <span class="col-span-2">
+            <div class="grid grid-cols-1 md:grid-cols-auto gap-4">
+                <span class="md:col-span-2">
                     <Card>
                         <About/>
                     </Card>
                 </span>
 
-                <span class="col-span-2">
+                <span class="md:col-span-2">
                     <Card>
                         <HotlineWebring/>
                     </Card>
@@ -63,7 +63,7 @@ fn App() -> impl IntoView {
                     <SiteButton/>
                 </Card>
 
-                <span class="col-span-2">
+                <span class="md:col-span-2">
                     <Card>
                         <RetroButtons/>
                     </Card>
@@ -76,7 +76,7 @@ fn App() -> impl IntoView {
 #[component]
 fn Nav() -> impl IntoView {
     view! {
-        <nav class="flex justify-center space-x-2 pb-1">
+        <nav class="flex justify-center space-x-2 pb-4">
             <a href="/">"[Home]"</a>
             <a href="https://mirror.xyz/kayh-online.eth">"[Blog]"</a>
         </nav>
