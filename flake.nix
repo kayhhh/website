@@ -48,7 +48,7 @@
 
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs;
-            [ cargo-watch rust-analyzer rustBin ] ++ build_inputs;
+            [ cargo-watch leptosfmt rust-analyzer rustBin ] ++ build_inputs;
           nativeBuildInputs = native_build_inputs;
 
           LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath build_inputs;
