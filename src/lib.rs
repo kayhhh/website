@@ -249,7 +249,7 @@ fn Music() -> impl IntoView {
 
             <script>
                 let audio = document.querySelector("audio");
-                audio.volume = 0.5;
+                audio.volume = 0.4;
             </script>
         </div>
     }
