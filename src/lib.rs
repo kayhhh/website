@@ -59,6 +59,10 @@ fn App() -> impl IntoView {
                     <Music/>
                 </Card>
 
+                <Card>
+                    <SiteButton/>
+                </Card>
+
                 <span class="col-span-2">
                     <Card>
                         <RetroButtons/>
@@ -231,6 +235,24 @@ fn Music() -> impl IntoView {
                 let audio = document.querySelector("audio");
                 audio.volume = 0.5;
             </script>
+        </div>
+    }
+}
+
+#[component]
+fn SiteButton() -> impl IntoView {
+    view! {
+        <div class="p-2 space-y-2 flex flex-col items-center rounded">
+            <img src="/public/btn.gif" alt="kayh.dev" width=88 height=31/>
+
+            <textarea
+                id="btn-code"
+                disabled
+                title="Copy this to your site!"
+                class="w-full rounded bg-black text-xs p-1"
+            >
+                r#"<a href="https://kayh.dev" target="_blank"><img src="https://kayh.dev/public/btn.gif" alt="kayh.dev" width="88px" height="31px" /></a>"#
+            </textarea>
         </div>
     }
 }
