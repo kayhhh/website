@@ -1,3 +1,3 @@
-# Website
+# website
 
-My personal website! Built with [Astro](https://astro.build/).
+My personal website!

@@ -1,0 +1,13 @@
+body {
+  @apply bg-slate-900 text-white;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+h1 {
+  @apply text-2xl text-red-300 font-bold;
+}
+
+a {
+  @apply text-cyan-300 hover:text-blue-400 transition-colors duration-200;
+}
