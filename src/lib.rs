@@ -115,7 +115,7 @@ fn Links() -> impl IntoView {
                 </li>
                 <li>
                     <a href="https://myanimelist.net/profile/kayh_online" target="_blank">
-                        "[MyAnimeList]"
+                        "[MAL]"
                     </a>
                 </li>
             </ul>
