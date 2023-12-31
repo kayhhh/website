@@ -190,7 +190,7 @@ fn Projects() -> impl IntoView {
 #[component]
 fn RetroButtons() -> impl IntoView {
     view! {
-        <div class="flex flex-wrap">
+        <div class="flex flex-wrap justify-center">
             <img src="/public/retro/miku.gif" alt="this site is MIKU APPROVED" width=88 height=31/>
             <img src="/public/retro/lain.gif" alt="Lain" width=88 height=31/>
             <img src="/public/retro/ilikecomputer.png" alt="I LIKE COMPUTER" width=88 height=31/>
