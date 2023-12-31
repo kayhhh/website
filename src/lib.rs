@@ -34,6 +34,15 @@ fn App() -> impl IntoView {
                         <Links/>
                     </Card>
                 </span>
+
+                <Card>
+                    <NavLinkAd/>
+                </Card>
+
+                <Card>
+                    <Projects/>
+                </Card>
+
             </div>
         </div>
     }
@@ -88,9 +97,44 @@ fn Links() -> impl IntoView {
 fn HotlineWebring() -> impl IntoView {
     view! {
         <div class="flex justify-between space-x-4">
-            <a href="https://hotlinewebring.club/kayh/previous">"<---"</a>
-            <p class="text-amber-300">Hotline Webring</p>
-            <a href="https://hotlinewebring.club/kayh/next">"--->"</a>
+            <a href="https://hotlinewebring.club/kayh/previous">"[prev]"</a>
+            <p class="text-amber-300">"Hotline Webring"</p>
+            <a href="https://hotlinewebring.club/kayh/next">"[next]"</a>
+        </div>
+    }
+}
+
+#[component]
+fn NavLinkAd() -> impl IntoView {
+    view! {
+        <iframe
+            src="https://dimden.neocities.org/navlink/"
+            title="NavLink Ad System"
+            width="180"
+            height="180"
+            class="border-none mx-auto"
+        ></iframe>
+    }
+}
+
+#[component]
+fn Projects() -> impl IntoView {
+    view! {
+        <div>
+            <h2>"Projects"</h2>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/unavi-xyz/unavi" target="_blank">
+                        "[UNAVI]"
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/unavi-xyz/wired-protocol" target="_blank">
+                        "[The Wired]"
+                    </a>
+                </li>
+            </ul>
         </div>
     }
 }
