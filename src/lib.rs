@@ -25,8 +25,14 @@ fn App() -> impl IntoView {
                     </Card>
                 </span>
 
+                <span class="col-span-2">
+                    <Card>
+                        <HotlineWebring/>
+                    </Card>
+                </span>
+
                 <Card>
-                    <HotlineWebring/>
+                    <NavLinkAd/>
                 </Card>
 
                 <span class="row-span-2">
@@ -36,12 +42,14 @@ fn App() -> impl IntoView {
                 </span>
 
                 <Card>
-                    <NavLinkAd/>
-                </Card>
-
-                <Card>
                     <Projects/>
                 </Card>
+
+                <span class="col-span-2">
+                    <Card>
+                        <RetroButtons/>
+                    </Card>
+                </span>
 
             </div>
         </div>
@@ -135,6 +143,60 @@ fn Projects() -> impl IntoView {
                     </a>
                 </li>
             </ul>
+        </div>
+    }
+}
+
+#[component]
+fn RetroButtons() -> impl IntoView {
+    view! {
+        <div class="flex flex-wrap">
+            <img src="/public/retro/miku.gif" alt="this site is MIKU APPROVED" width=88 height=31/>
+            <img src="/public/retro/lain.gif" alt="Lain" width=88 height=31/>
+            <img src="/public/retro/ilikecomputer.png" alt="I LIKE COMPUTER" width=88 height=31/>
+            <img src="/public/retro/jquery.gif" alt="jQuery is evil!" width=88 height=31/>
+            <img src="/public/retro/buyit.gif" alt="MUG ROOT BEET" width=88 height=31/>
+
+            <a href="https://archive.org/" target="_blank">
+                <img
+                    src="/public/retro/internetarchive.gif"
+                    alt="Internet Archive"
+                    width=88
+                    height=31
+                />
+            </a>
+            <a href="https://www.tanguy.cyou/" target="_blank">
+                <img
+                    src="https://www.tanguy.cyou/assets/img/links/button.webp"
+                    alt="tanguy.cyou"
+                    width=88
+                    height=31
+                />
+            </a>
+            <a href="https://www.melody.my.id/" target="_blank">
+                <img
+                    src="https://melodies.neocities.org/image/button/melody.png"
+                    alt="Melody Hot Springs"
+                    width=88
+                    height=31
+                />
+            </a>
+            <a href="https://dimden.dev/" target="_blank">
+                <img
+                    src="https://dimden.dev/services/images/88x31.gif"
+                    alt="DIMDEN"
+                    width=88
+                    height=31
+                />
+            </a>
+            <a href="https://melankorin.net/" target="_blank">
+                <img
+                    src="https://melankorin.net/assets/img/buttons/button-1.gif"
+                    alt="melankorin"
+                    width=88
+                    height=31
+                />
+            </a>
         </div>
     }
 }
