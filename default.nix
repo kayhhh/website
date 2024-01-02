@@ -21,12 +21,15 @@ let
     LD_LIBRARY_PATH = lib.makeLibraryPath build_inputs;
   };
 in {
-  wasm = rustPlatform.buildRustPackage (common // {
+  web = rustPlatform.buildRustPackage (common // {
     pname = "website";
     buildPhase = "trunk build --release";
     installPhase = ''
-      mkdir -p $out
-      cp -r ./dist/* $out
+      mkdir -p $out/web
+      cp -r ./dist/* $out/web
+    '';
+    postInstall = ''
+      cp -r ./assets $out/web
     '';
   });
 }
