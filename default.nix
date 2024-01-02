@@ -24,5 +24,9 @@ in {
   wasm = rustPlatform.buildRustPackage (common // {
     pname = "website";
     buildPhase = "trunk build --release";
+    installPhase = ''
+      mkdir -p $out
+      cp -r ./dist/* $out
+    '';
   });
 }
