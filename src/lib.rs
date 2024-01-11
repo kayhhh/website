@@ -171,7 +171,7 @@ fn Projects() -> impl IntoView {
 
             <ul>
                 <li class="space-x-1">
-                    <a href="https://github.com/unavi-xyz/unavi" target="_blank">
+                    <a href="https://unavi.xyz" target="_blank">
                         "[UNAVI]"
                     </a>
                     <span>"/"</span>
