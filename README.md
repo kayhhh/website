@@ -2,8 +2,6 @@
 
 My personal website!
 
-## Development
-
 ### Build
 
 ```bash
