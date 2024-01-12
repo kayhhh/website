@@ -2,13 +2,13 @@
 
 My personal website!
 
-### Build
+## Build
 
 ```bash
 nix build
 ```
 
-### Develop
+## Develop
 
 ```bash
 trunk serve
