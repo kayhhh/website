@@ -170,12 +170,13 @@ fn Projects() -> impl IntoView {
             <h2 class="text-purple-400">"Projects"</h2>
 
             <ul>
-                <li class="space-x-1">
+                <li>
                     <a href="https://unavi.xyz" target="_blank">
                         "[UNAVI]"
                     </a>
-                    <span>"/"</span>
-                    <a href="https://github.com/unavi-xyz/wired-protocol" target="_blank">
+                </li>
+                <li>
+                    <a href="https://wired-protocol.org" target="_blank">
                         "[The Wired]"
                     </a>
                 </li>
