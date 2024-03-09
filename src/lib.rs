@@ -181,9 +181,7 @@ fn Projects() -> impl IntoView {
                     </a>
                 </li>
                 <li>
-                    <a href="https://vrm-viewer.kayh.dev/">
-                        "🤠 [VRM Viewer]"
-                    </a>
+                    <a href="https://vrm-viewer.kayh.dev/">"🤠 [VRM Viewer]"</a>
                 </li>
             </ul>
         </div>
