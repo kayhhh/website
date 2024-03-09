@@ -172,16 +172,18 @@ fn Projects() -> impl IntoView {
             <ul>
                 <li>
                     <a href="https://unavi.xyz" target="_blank">
-                        "[UNAVI]"
+                        "⬜ [UNAVI]"
                     </a>
                 </li>
                 <li>
                     <a href="https://wired-protocol.org" target="_blank">
-                        "[The Wired]"
+                        "🔌 [The Wired]"
                     </a>
                 </li>
                 <li>
-                    <a href="https://vrm-viewer.kayh.dev/">"[VRM Viewer]"</a>
+                    <a href="https://vrm-viewer.kayh.dev/">
+                        "🤠 [VRM Viewer]"
+                    </a>
                 </li>
             </ul>
         </div>
