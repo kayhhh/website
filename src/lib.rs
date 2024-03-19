@@ -181,9 +181,7 @@ fn Projects() -> impl IntoView {
                     </a>
                 </li>
                 <li>
-                    <a href="https://unavi-xyz.github.io/bevy_vrm/">
-                        "🤠 [VRM Viewer]"
-                    </a>
+                    <a href="https://unavi-xyz.github.io/bevy_vrm/">"🤠 [VRM Viewer]"</a>
                 </li>
             </ul>
         </div>
