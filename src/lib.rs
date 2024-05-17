@@ -3,7 +3,7 @@ use wasm_bindgen::prelude::*;
 
 mod components;
 
-use components::*;
+use components::Card;
 
 #[wasm_bindgen(start)]
 pub fn start() {
@@ -103,10 +103,11 @@ fn Nav() -> impl IntoView {
 fn About() -> impl IntoView {
     view! {
         <div>
-            <h2 class="text-blue-400">"About"</h2>
-
-            <p>
-                "Hi, I'm Kayh! Welcome to my site! I'm a self-taught developer building things I think are cool. I play a lot of VRChat, so if you see me around come say hi!"
+            <p class="text-center">
+                "Self-taught developer building the new era."
+            </p>
+            <p class="text-center">
+                "Stare into the sun and what do you see?"
             </p>
         </div>
     }
@@ -179,9 +180,6 @@ fn Projects() -> impl IntoView {
                     <a href="https://wired-protocol.org" target="_blank">
                         "🔌 [The Wired]"
                     </a>
-                </li>
-                <li>
-                    <a href="https://unavi-xyz.github.io/bevy_vrm/">"🤠 [VRM Viewer]"</a>
                 </li>
             </ul>
         </div>
