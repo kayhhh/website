@@ -27,7 +27,7 @@ fn App() -> impl IntoView {
 
                         <img
                             src="/public/neko-arc-3d.png"
-                            alt="Neko Arc 3D"
+                            alt="Neko Arc (3D :o)"
                             width=120
                             height=213
                             class="absolute -right-[160px] -top-[80px] animate-float"
@@ -52,7 +52,7 @@ fn App() -> impl IntoView {
 
                     <img
                         src="/public/neko-arc-lookback.gif"
-                        alt="Neko Arc"
+                        alt="Neko Arc!"
                         width=160
                         height=160
                         class="absolute -left-[160px] -top-[50px] animate-float2"
