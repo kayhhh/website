@@ -1,8 +1,11 @@
 {
   inputs = {
+    crane = {
+      url = "github:ipetkov/crane";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs = {
@@ -12,49 +15,65 @@
     };
   };
 
-  outputs = { self, flake-utils, nixpkgs, rust-overlay, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      crane,
+      flake-utils,
+      nixpkgs,
+      rust-overlay,
+      ...
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         overlays = [ (import rust-overlay) ];
         pkgs = import nixpkgs { inherit system overlays; };
 
-        rustBin = pkgs.rust-bin.stable.latest.default.override {
+        rustToolchain = pkgs.pkgsBuildHost.rust-bin.stable.latest.default.override {
           targets = [ "wasm32-unknown-unknown" ];
         };
 
-        build_inputs = with pkgs; [ ];
-
-        native_build_inputs = with pkgs; [
-          binaryen
-          cargo-auditable
-          nodePackages.prettier
-          pkg-config
-          tailwindcss
-          trunk
-          wasm-bindgen-cli
-        ];
-
-        code = pkgs.callPackage ./. {
-          inherit pkgs system build_inputs native_build_inputs;
-        };
-      in rec {
-        packages = code // {
-          all = pkgs.symlinkJoin {
-            name = "all";
-            paths = with code; [ web ];
+        craneLib = (crane.mkLib pkgs).overrideToolchain rustToolchain;
+      in
+      {
+        packages.default = craneLib.buildTrunkPackage {
+          src = pkgs.lib.cleanSourceWith {
+            src = ./.;
+            filter =
+              path: type:
+              (pkgs.lib.hasInfix "/public" path)
+              || (pkgs.lib.hasSuffix ".html" path)
+              || (pkgs.lib.hasSuffix ".css" path)
+              || (craneLib.filterCargoSources path type);
           };
 
-          default = packages.all;
-          override = packages.all;
-          overrideDerivation = packages.all;
+          nativeBuildInputs = (
+            with pkgs;
+            [
+              binaryen
+              tailwindcss
+              trunk
+              wasm-bindgen-cli
+              wasm-tools
+            ]
+          );
+
+          pname = "website";
+          strictDeps = true;
+          trunkIndexPath = "index.html";
+          wasm-bindgen-cli = pkgs.wasm-bindgen-cli;
         };
 
-        devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs;
-            [ cargo-watch leptosfmt rust-analyzer rustBin ] ++ build_inputs;
-          nativeBuildInputs = native_build_inputs;
-
-          LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath build_inputs;
+        devShells.default = craneLib.devShell {
+          packages = (
+            with pkgs;
+            [
+              leptosfmt
+              nodePackages.prettier
+              rust-analyzer
+            ]
+          );
         };
-      });
+      }
+    );
 }
