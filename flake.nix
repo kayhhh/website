@@ -42,8 +42,9 @@
             filter =
               path: type:
               (pkgs.lib.hasInfix "/public" path)
-              || (pkgs.lib.hasSuffix ".html" path)
               || (pkgs.lib.hasSuffix ".css" path)
+              || (pkgs.lib.hasSuffix ".html" path)
+              || (pkgs.lib.hasSuffix ".js" path)
               || (craneLib.filterCargoSources path type);
           };
 
@@ -71,6 +72,8 @@
               leptosfmt
               nodePackages.prettier
               rust-analyzer
+              tailwindcss
+              trunk
             ]
           );
         };
