@@ -103,12 +103,8 @@ fn Nav() -> impl IntoView {
 fn About() -> impl IntoView {
     view! {
         <div>
-            <p class="text-center">
-                "Self-taught developer building the new era."
-            </p>
-            <p class="text-center">
-                "Stare into the sun and what do you see?"
-            </p>
+            <p class="text-center">"Self-taught developer building the new era."</p>
+            <p class="text-center">"Stare into the sun and what do you see?"</p>
         </div>
     }
 }
