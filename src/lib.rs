@@ -18,8 +18,6 @@ fn App() -> impl IntoView {
         <div class="max-w-2xl mx-auto py-8 px-4">
             <h1 class="text-center pb-2">"kayh.dev"</h1>
 
-            <Nav/>
-
             <div class="grid grid-cols-1 md:grid-cols-auto gap-4">
                 <span class="md:col-span-2">
                     <Card>
@@ -86,16 +84,6 @@ fn App() -> impl IntoView {
                 </span>
             </div>
         </div>
-    }
-}
-
-#[component]
-fn Nav() -> impl IntoView {
-    view! {
-        <nav class="flex justify-center space-x-2 pb-4">
-            <a href="/">"[Home]"</a>
-            <a href="https://mirror.xyz/kayh-online.eth">"[Blog]"</a>
-        </nav>
     }
 }
 
